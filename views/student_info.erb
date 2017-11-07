@@ -1,0 +1,19 @@
+<div>
+  <div>
+  <a href="/students"><button class="btn btn-primary">Go Back</button></a>
+  </div>
+  <div>
+  <ul style="list-style: none;">
+    <li>First Name: <%= @student.firstname %></li>
+    <li>Last Name: <%= @student.lastname %></li>
+    <li>Birthday: <%= @student.birthday %></li>
+    <li>Address: <%= @student.address %></li>
+  </ul>
+  </div>
+
+  <div>
+    <a href="/students/<%= @student.studentid %>/edit"><button class="glyphicon glyphicon-edit">Edit</button></a>
+    <a href="/students/<%= @student.studentid %>/delete"><button class="glyphicon glyphicon-trash" style="background-color: red">Delete</button></a>
+  </div>
+  
+</div>

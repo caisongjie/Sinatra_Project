@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinatra Project by Songjie Cai</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body style="border: 10px solid lightgray;">
+<div class="col-md-12" style="position: relative;">
+    <div class="row">
+        <div class="col-md-8 text-centered"></div>
+        <div class="col-md-4 text-centered">
+            <h1 style="color: darkred; font-weight: bold">
+                Student
+                <div></div>
+                <br>Information
+                <div></div>
+                <br> System
+            </h1>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default" role="navigation" style="">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="/">Home</a>
+                </li>
+                <li class="">
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/students">Students</a>
+                </li>
+                <li>
+                    <a href="/comment">Comment</a>
+                </li>
+                <li>
+                    <a href="/video">Video</a>
+                </li>
+                <li>
+                    <a href="/<%= session[:admin] ? 'logout' : 'login' %>"><%= session[:admin] ? "logout" : "login" %></a>
+                </li>
+            </ul>
+        </div>
+
+        <div></div>
+    </nav>
+
+    <%= yield %>
+</div>
+</body>
+</html>

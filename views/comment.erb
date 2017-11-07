@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <a href="/comment/create"><button class="btn btn-primary">Create New Comment</button></a>
+  </div>
+  <% if @comments == [] %>
+    <p> No comments </p>
+  <% else %>
+  <ul>
+    <% for c in @comments %>
+    <li><%= c.comment + " -- " + c.created_at.to_s %> </li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>

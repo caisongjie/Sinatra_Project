@@ -1,0 +1,16 @@
+bugs I have encountered:
+
+Q1. Session not saved after redirect
+Solution: write  use Rack::Session::Cookie  in main.rb
+
+Q2. Database modeling issues
+Solution: Datamapper setup, define class(model), DataMapper.finalize, DataMapper.auto_migrate!, DataMapper.auto_upgrade!
+
+Q3. HTML5 tag <video> not supported by Firefox on Ubuntu
+Solution: Nothing wrong with the code, use Chrome, then you can play the video
+
+Q4. Students.all and Comment.all return an empty array but !@array gives false
+Solution: use !@array == [] to check, or use empty?
+
+Q5. Automate created_at for comment?
+Solution: use property :created_at, DateTime, remember to require dm-timestamps

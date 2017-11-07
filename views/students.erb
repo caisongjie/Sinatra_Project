@@ -1,0 +1,17 @@
+<div>
+  <div>
+  <a href="/students/create"><button class="btn btn-primary">Create</button></a>
+  </div>
+  <% if @students == [] %>
+    <div>
+      <p>No students </p>
+    </div>
+  <% else %>
+    <ul>
+      <% for s in @students %>
+      <li><a href="students/<%= s.studentid %>" style="color: black"><%= s.lastname %>,<%= s.firstname %> </a></li>
+      <% end %>
+    </ul>  
+  <% end %>
+
+</div>
