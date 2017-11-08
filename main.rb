@@ -10,7 +10,7 @@ configure do
 
 end
 
-Datamapper.setup(:default, ENV["DATABASE_URL"] || "sqlite:some.db")
+DataMapper.setup(:default, ENV["DATABASE_URL"] || "sqlite:some.db")
 DataMapper.auto_migrate!
 =begin
 
