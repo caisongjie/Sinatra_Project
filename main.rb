@@ -1,8 +1,9 @@
 require 'sinatra'
 require 'erb'
 require_relative 'students'
-require 'sass'
+
 use Rack::Session::Cookie
+
 configure do
   enable :session
   set :username,"coen164" 
@@ -11,7 +12,7 @@ configure do
 end
 
 DataMapper.setup(:default, ENV["DATABASE_URL"] || "sqlite3://#{Dir.pwd}/students.db")
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 
 get '/' do
   erb :home
