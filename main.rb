@@ -10,6 +10,10 @@ configure do
 
 end
 
+Datamapper.setup(:default, ENV["DATABASE_URL"] || "sqlite:some.db")
+DataMapper.auto_migrate!
+=begin
+
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/students.db")
   DataMapper.auto_migrate!
@@ -19,7 +23,7 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
   DataMapper.auto_migrate!
 end
-
+=end
 get '/' do
   erb :home
 end
