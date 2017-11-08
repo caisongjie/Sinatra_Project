@@ -7,7 +7,7 @@
   <% else %>
   <ul>
     <% for c in @comments %>
-    <li><%= c.comment + " -- " + c.created_at.to_s %> </li>
+    <li><a href=""><%= c.comment + " -- " + c.created_at.to_s %></a></li>
     <% end %>
   </ul>
   <% end %>
