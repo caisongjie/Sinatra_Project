@@ -2,7 +2,7 @@ require 'dm-core'
 require 'dm-migrations'
 require 'dm-timestamps'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/students.db")
+#DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/students.db")
 
 
 class Students
@@ -23,5 +23,5 @@ class Comment
 end
 
 DataMapper.finalize
-DataMapper.auto_migrate!
-DataMapper.auto_upgrade!
+#DataMapper.auto_migrate!
+#DataMapper.auto_upgrade!
