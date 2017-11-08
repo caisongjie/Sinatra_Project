@@ -7,11 +7,18 @@ configure do
   enable :session
   set :username,"coen164" 
   set :password, "123456" 
+
+end
+
+configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/students.db")
   DataMapper.auto_migrate!
 end
 
-
+configure :production do
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+  DataMapper.auto_migrate!
+end
 
 get '/' do
   erb :home
