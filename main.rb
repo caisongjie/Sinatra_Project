@@ -131,4 +131,8 @@ post '/comment/create' do
   redirect to('/comment')
 end
 
+get '/comment/:id' do
+  @comment = Comment.get(params[:id])
+  erb :comment_info
+end
 

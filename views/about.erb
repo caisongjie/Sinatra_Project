@@ -1,3 +1,29 @@
 <div>
-  <p>This is about page</p>
+  <h1>bugs I have encountered:</h1>
+  <p>
+Q1. Session not saved after redirect
+<br>
+Solution: write  use Rack::Session::Cookie  in main.rb
+<hr>
+Q2. Database modeling issues
+<br>
+Solution: Datamapper setup, define class(model), DataMapper.finalize, DataMapper.auto_migrate!, DataMapper.auto_upgrade!
+<hr>
+Q3. HTML5 tag video not supported by Firefox on Ubuntu
+<br>
+Solution: Nothing wrong with the code, use Chrome, then you can play the video
+<hr>
+Q4. Students.all and Comment.all return an empty array but !@array gives false
+<br>
+Solution: use !@array == [] to check, or use empty?
+<hr>
+Q5. Automate created_at for comment?
+<br>
+Solution: use property :created_at, DateTime, remember to require dm-timestamps
+<hr>
+Q6. Deploy on Heroku(took me a lot of time to figure out and find the correct solution)
+<br>
+Solution: there was something wrong with 'dm-sqlite-adapter' because Heroku does not support SQLite explicitly since running SQLite is not a service. Therefore, I need to kinda map it to PostgreSQL as database. In main.rb, use  DataMapper.setup(:default, ENV["DATABASE_URL"] || "sqlite3://#{Dir.pwd}/students.db"); DataMapper.auto_upgrade!
+<hr>
+  </p>
 </div>
