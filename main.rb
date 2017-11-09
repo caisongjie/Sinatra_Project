@@ -22,6 +22,10 @@ get '/about' do
   erb :about
 end
 
+get '/contact' do
+  erb :contact
+end
+
 get '/login' do
   erb :login
 end
