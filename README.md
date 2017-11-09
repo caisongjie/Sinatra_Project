@@ -9,6 +9,7 @@
   <li>video page: a video tag with a sample 5s video</li>
   <li>login/logout: user has to login to create/edit/delete a student record. username: coen 164, password: 123456</li>
   </ul>
+  Link: https://tranquil-mesa-27033.herokuapp.com/
 </div>
 
 
